@@ -18,18 +18,18 @@ public class TamagotchiApp {
 
         while(jugar){
 
-            System.out.println("Eliga un número para realizar una acción:");
-            System.out.println("(1) Alimentar a " + yibis.getNombre());
-            System.out.println("(2) Jugar con " + yibis.getNombre());
-            System.out.println("(3) Hacer que descanse " + yibis.getNombre());
-            System.out.println("(4) Ver el estado de " + yibis.getNombre());
-            System.out.println("(5) Salir");
+            System.out.println(Colors.VERDE + "Elige un número para realizar una acción:" + Colors.RESET);
+            System.out.println(Colors.AZUL + "(1) Alimentar a " + yibis.getNombre() + Colors.RESET);
+            System.out.println(Colors.CIAN + "(2) Jugar con " + yibis.getNombre() + Colors.RESET);
+            System.out.println(Colors.AMARILLO + "(3) Hacer que descanse " + yibis.getNombre() + Colors.RESET);
+            System.out.println(Colors.MAGENTA + "(4) Ver el estado de " + yibis.getNombre() + Colors.RESET);
+            System.out.println(Colors.ROJO + "(5) Salir" + Colors.RESET);
 
             try {
                 int opcionElegida = scanner.nextInt();
                 switch(opcionElegida) {
                     case 1:
-                        System.out.println("¿Cuanto alimento quieres darle?");
+                        System.out.println("¿Cuanto alimento quieres darle? (0 a 100 gramos)");
                         alimento = scanner.nextInt();
                         yibis.alimentar(alimento);
                         break;
