@@ -43,6 +43,10 @@ public class Tamagotchi {
         this.hambre = hambre;
     }
 
+    public CurrentState getEstado() {
+        return estado;
+    }
+
     @Override
     public String toString() {
         return "Nombre = " + getNombre() + "\n" +
@@ -89,18 +93,23 @@ public class Tamagotchi {
     }
 
     public void verEstado() {
+        CurrentState estadoActual;
+
         if (this.energia < 20 && this.hambre >= 80) {
-            System.out.println(CurrentState.ENFERMO);
-            System.out.println(this.nombre + " está enfermo. Necesita alimento y descanso!");
+            estadoActual = CurrentState.ENFERMO;
         } else if (this.hambre >= 80) {
-            System.out.println(CurrentState.HAMBRE);
-            System.out.println(this.nombre + " necesita alimento!");
+            estadoActual = CurrentState.HAMBRE;
         } else if (this.energia < 20) {
-            System.out.println(CurrentState.CANSADO);
-            System.out.println(this.nombre + " necesita descansar!");
+            estadoActual = CurrentState.CANSADO;
         } else {
-            System.out.println(CurrentState.FELIZ);
-            System.out.println(this.nombre + " está feliz :)");
+            estadoActual = CurrentState.FELIZ;
         }
+
+        System.out.println(estadoActual);
+        System.out.println(this.nombre + " " + estadoActual.getDescripcionEstado());
+    }
+
+    public void cambiarEstado(CurrentState nuevoEstado){
+        this.estado = nuevoEstado;
     }
 }
