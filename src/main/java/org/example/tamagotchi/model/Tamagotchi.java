@@ -6,6 +6,7 @@ public class Tamagotchi {
     private String nombre;
     private int energia;
     private int hambre;
+    private CurrentState estado;
 
     private static final int MAX_ENERGIA = 100;
 
@@ -14,6 +15,7 @@ public class Tamagotchi {
         this.nombre = nombre;
         this.energia = 100;
         this.hambre = 0;
+        this.estado = CurrentState.FELIZ;
     }
 
     // setters & getters
@@ -88,12 +90,16 @@ public class Tamagotchi {
 
     public void verEstado() {
         if (this.energia < 20 && this.hambre >= 80) {
+            System.out.println(CurrentState.ENFERMO);
             System.out.println(this.nombre + " está enfermo. Necesita alimento y descanso!");
         } else if (this.hambre >= 80) {
+            System.out.println(CurrentState.HAMBRE);
             System.out.println(this.nombre + " necesita alimento!");
         } else if (this.energia < 20) {
+            System.out.println(CurrentState.CANSADO);
             System.out.println(this.nombre + " necesita descansar!");
         } else {
+            System.out.println(CurrentState.FELIZ);
             System.out.println(this.nombre + " está feliz :)");
         }
     }

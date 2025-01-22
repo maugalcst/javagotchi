@@ -2,12 +2,15 @@ package org.example.tamagotchi.ui;
 
 import org.example.tamagotchi.model.Tamagotchi;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TamagotchiApp {
     public static void main(String[] args) {
 
         Tamagotchi yibis = new Tamagotchi("Javapoo", 100, 0);
+
+        ArrayList<Tamagotchi> tamagotchis = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -44,6 +47,7 @@ public class TamagotchiApp {
                         yibis.descansar(horas);
                         break;
                     case 4:
+                        System.out.println(yibis);
                         yibis.verEstado();
                         break;
                     case 5:
