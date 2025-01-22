@@ -41,6 +41,13 @@ public class Tamagotchi {
         this.hambre = hambre;
     }
 
+    @Override
+    public String toString() {
+        return "Nombre = " + getNombre() + "\n" +
+                "Energía = " + getEnergia() + "\n" +
+                "Hambre = " + getHambre() + "\n";
+    }
+
     // métodos
     public void alimentar(int alimento){
         this.hambre -= alimento;
